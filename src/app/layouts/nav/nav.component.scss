@@ -1,0 +1,23 @@
+@import '~assets/scss/colors';
+@import '~assets/scss/mixins';
+
+.navbar {
+  min-height: 60px;
+  background-color: white;
+  transition: all 1s ease-out;
+  @include min-width-992 {
+    background-color: transparent;
+  }
+}
+
+.nav-link {
+  font-family: Roboto-Regular, sans-serif;
+  font-size: 14px;
+  color: black;
+  padding-left: 4px;
+
+  @include min-width-992 {
+    color: white;
+    padding-left: 0;
+  }
+}
