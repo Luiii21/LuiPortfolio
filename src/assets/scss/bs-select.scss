@@ -1,0 +1,9 @@
+@import '~assets/scss/mixins';
+
+.bs-select {
+  max-width: 200px !important;
+
+  @include min-width-992 {
+    max-width: 150px !important;
+  }
+}

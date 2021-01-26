@@ -1,5 +1,6 @@
 $jl-white: #ecf0f1;
 $jl-black: #34495e;
+$jl-grey: #575757;
 $jl-blue-1: #07074A;
 $jl-blue-2: #01CCFF;
 $jl-blue-3: #45aaf2;
@@ -16,8 +17,12 @@ $social-github: #171515;
   background-color: #ecf0f1;
 }
 
-.jl-orange {
-  color: #f0932b !important;
+.txt-grey {
+  color: $jl-grey;
+}
+
+.txt-shadow {
+  text-shadow: 1px 1px 2px #000000;
 }
 
 .fa-twitter {
