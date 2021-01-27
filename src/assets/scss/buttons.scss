@@ -1,13 +1,78 @@
-.btn-jl-primary {
-  border: 0 solid transparent !important;
-  background: linear-gradient(90deg, rgba(26,80,203,1) 0%, rgba(0,203,255,1) 100%);
-  border-radius: 15px !important;
-  color: white !important;
-  font-family: Roboto-Regular, sans-serif;
-  min-height: 40px;
+@import '~assets/scss/colors';
+@import '~assets/scss/mixins';
 
-  &:hover {
-    background: linear-gradient(90deg, rgba(26,80,203,1) 0%, rgba(0,203,255,1) 100%);
-    border: 0px solid transparent !important;
+.btn {
+  font-family: 'Rubik', sans-serif;
+  font-size: 12px !important;
+  margin-top: 4px;
+  max-height: 44px;
+  min-width: 50% !important;
+  transition: all 0.5s ease-out !important;
+
+  .active {
+    margin-top: 0;
+  }
+
+  @include min-width-992 {
+    margin-top: 1px;
+    min-width: 84px !important;
+  }
+}
+
+.btn-custom-danger {
+  border-radius: 0 !important;
+  background-color: white;
+  border-bottom: 2px solid $custom-danger !important;
+  color: $custom-danger !important;
+
+
+  &.active {
+    color: white !important;
+    border: 2px solid $custom-danger !important;
+    border-radius: 25px !important;
+    background-color: $custom-danger;
+  }
+}
+
+.btn-custom-success {
+  border-radius: 0 !important;
+  background-color: white;
+  border-bottom: 2px solid $custom-success !important;
+  color: $custom-success !important;
+
+
+  &.active {
+    color: white !important;
+    border: 2px solid $custom-success !important;
+    border-radius: 25px !important;
+    background-color: $custom-success;
+  }
+}
+
+.btn-custom-info {
+  border-radius: 0 !important;
+  background-color: white;
+  border-bottom: 2px solid $custom-info !important;
+  color: $custom-info !important;
+
+  &.active {
+    color: white !important;
+    border: 2px solid $custom-info !important;
+    border-radius: 25px !important;
+    background-color: $custom-info;
+  }
+}
+
+.btn-custom-warning {
+  border-radius: 0 !important;
+  background-color: white;
+  border-bottom: 2px solid $custom-warning !important;
+  color: $custom-warning !important;
+
+  &.active {
+    color: white !important;
+    border: 2px solid $custom-warning !important;
+    border-radius: 25px !important;
+    background-color: $custom-warning;
   }
 }
