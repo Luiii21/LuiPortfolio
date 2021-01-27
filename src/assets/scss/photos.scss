@@ -1,0 +1,46 @@
+.photos {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+
+  &.one {
+    height: 100px;
+    width: 100px;
+  }
+
+  &.two {
+    height: 140px;
+    width: 200px;
+    left: 100px;
+    z-index: 3;
+  }
+
+  &.three {
+    height: 150px;
+    width: 150px;
+    top: 100px;
+    z-index: 7;
+  }
+
+  &.four {
+    height: 150px;
+    width: 300px;
+    bottom: 0;
+    right: 0;
+    z-index: 3;
+  }
+
+  &.five {
+    height: 220px;
+    width: 220px;
+    z-index: 2;
+    right: 0;
+  }
+
+  &.six {
+    height: 80px;
+    width: 80px;
+    bottom: 0;
+    z-index: 9;
+  }
+}
