@@ -9,6 +9,10 @@ const routes: Routes = [
     component: ContentLayoutComponent,
     loadChildren: () =>
       import('./modules/landing/landing.module').then((m) => m.LandingModule),
+  },
+  {
+    path: '**',
+    redirectTo: ''
   }
 ];
 
