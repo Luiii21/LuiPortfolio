@@ -1,17 +1,11 @@
-<nav class="navbar navbar-expand-lg fixed-top shadow-sm">
-  <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <i class="fa fa-bars txt-grey"></i>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item mx-sm-1 mx-lg-3">
-        <a class="nav-link rubik" href="#">INICIO</a>
-      </li>
-      <li class="nav-item mx-sm-1 mx-lg-3">
-        <a class="nav-link rubik" [routerLink]="['/projects']">PROYECTOS</a>
-      </li>
-    </ul>
-  </div>
+<nav class="portfolio-nav">
+ <div class="archetypes-container">
+    <div class="buttons-container animate__animated animate__fadeIn" [ngClass]="{'changed': routing.url.includes('/jeanlui/profesional')}">
+      <h4>Perfil:</h4>
+      <div class="d-flex">
+        <button class="btn-archetype" type="button" [routerLink]="['profesional']" [routerLinkActive]="'active'">Profesional</button>
+        <button class="btn-archetype" type="button" [routerLink]="['personal']" [routerLinkActive]="'active'">Personal</button>
+      </div>
+    </div>
+ </div>
 </nav>

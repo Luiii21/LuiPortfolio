@@ -1,78 +1,60 @@
 @import '~assets/scss/colors';
 @import '~assets/scss/mixins';
 
-.btn {
-  font-family: 'Rubik', sans-serif;
-  font-size: 12px !important;
-  margin-top: 4px;
-  max-height: 44px;
-  min-width: 50% !important;
-  transition: all 0.5s ease-out !important;
+button {
+  outline: none !important;
+}
 
-  .active {
-    margin-top: 0;
+.btn-archetype {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  outline: none;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  &:hover::after, &.active::after, &.active {
+    font-weight: bold;
+    width: 100%;
+  }
+
+  &::after {
+    content: '';
+    width: 0px;
+    height: 2px;
+    display: block;
+    background: white;
+    transition: 300ms;
+  }
+}
+
+
+.btn-backwards {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  min-height: 46px;
+  width: auto;
+
+  i {
+    font-size: 23px;
+  }
+
+  h6 {
+    margin: 0 10px;
   }
 
   @include min-width-992 {
-    margin-top: 1px;
-    min-width: 84px !important;
+    justify-content: center;
   }
 }
 
-.btn-custom-danger {
-  border-radius: 0 !important;
-  background-color: white;
-  border-bottom: 2px solid $custom-danger !important;
-  color: $custom-danger !important;
-
-
-  &.active {
-    color: white !important;
-    border: 2px solid $custom-danger !important;
-    border-radius: 25px !important;
-    background-color: $custom-danger;
-  }
-}
-
-.btn-custom-success {
-  border-radius: 0 !important;
-  background-color: white;
-  border-bottom: 2px solid $custom-success !important;
-  color: $custom-success !important;
-
-
-  &.active {
-    color: white !important;
-    border: 2px solid $custom-success !important;
-    border-radius: 25px !important;
-    background-color: $custom-success;
-  }
-}
-
-.btn-custom-info {
-  border-radius: 0 !important;
-  background-color: white;
-  border-bottom: 2px solid $custom-info !important;
-  color: $custom-info !important;
-
-  &.active {
-    color: white !important;
-    border: 2px solid $custom-info !important;
-    border-radius: 25px !important;
-    background-color: $custom-info;
-  }
-}
-
-.btn-custom-warning {
-  border-radius: 0 !important;
-  background-color: white;
-  border-bottom: 2px solid $custom-warning !important;
-  color: $custom-warning !important;
-
-  &.active {
-    color: white !important;
-    border: 2px solid $custom-warning !important;
-    border-radius: 25px !important;
-    background-color: $custom-warning;
-  }
+.btn-attributes {
+  background-color: transparent;
+  border: none;
+  height: 46px;
+  min-height: 46px;
 }

@@ -1,0 +1,72 @@
+@import '~assets/scss/colors';
+@import '~assets/scss/mixins';
+
+.attributes-nav {
+  background-color: white;
+  flex-direction: column;
+  display: flex;
+  height: 230px;
+  width: 100%;
+  position: relative;
+  overflow-y: auto;
+  min-height: 230px;
+  transition: all 1s;
+  padding: 0 15px;
+
+  @include min-width-992 {
+    animation: nav-animation-default 0.5s;
+    align-items: center;
+    flex-direction: row;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    overflow-x: hidden;
+    min-height: auto;
+    right: 0;
+
+
+    @keyframes nav-animation-default {
+      0% {
+        width: 0%;
+        height: 100%;
+      }
+
+      100% {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.activated {
+  height: 46px;
+  min-height: 46px;
+  overflow-y: hidden;
+  @include min-width-992 {
+    animation: nav-animation 1.3s;
+    height: 76px;
+    justify-content: flex-end;
+    width: 100%;
+    min-height: auto;
+    @keyframes nav-animation {
+      0% {
+        width: 100%;
+        height: 100%;
+      }
+
+      50% {
+        width: 0%;
+        height: 100%;
+      }
+
+      51% {
+        height: 76px;
+      }
+
+      100% {
+        width: 100%;
+      }
+    }
+  }
+}

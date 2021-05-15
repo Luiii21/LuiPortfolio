@@ -1,71 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Asap&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
-.asap {
-  font-family: 'Asap', sans-serif;
+.quicksand {
+  font-family: 'Quicksand', sans-serif;
 }
 
-.yusei {
-  font-family: 'Yusei Magic', sans-serif;
-}
-
-.rubik {
-  font-family: 'Rubik', sans-serif;
-}
-
-.fz-10 {
-  font-size: 10px;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.fz-12 {
+.txt-xsm {
   font-size: 12px;
 }
 
-.fz-14 {
-  font-size: 14px;
+.txt-sm {
+  font-size: 16px;
 }
 
-.fz-16 {
-  font-size: 16px !important;
+.txt-md {
+  font-size: 22px;
 }
 
-.fz-18 {
-  font-size: 18px;
-}
-
-.fz-20 {
-  font-size: 20px;
-}
-
-.fz-25 {
-  font-size: 25px;
-}
-
-.fz-26 {
-  font-size: 26px;
-}
-
-.fz-28 {
-  font-size: 28px;
-}
-
-.fz-30 {
-  font-size: 30px;
-}
-
-.fz-35 {
-  font-size: 35px;
-}
-
-.fz-55 {
-  font-size: 55px;
-}
-
-.fz-60 {
-  font-size: 60px;
+.fxt-lg {
+  font-size: 33px;
 }

@@ -7,6 +7,7 @@ import {SharedModule} from './shared/shared.module';
 import {NavComponent} from './layouts/nav/nav.component';
 import {ContentLayoutComponent} from './layouts/content-layout/content-layout.component';
 import {FooterComponent} from './layouts/footer/footer.component';
+import {ContentLuiComponent} from './layouts/content-lui/content-lui.component';
 
 // Extras
 
@@ -17,6 +18,7 @@ import {FooterComponent} from './layouts/footer/footer.component';
     NavComponent,
     ContentLayoutComponent,
     FooterComponent,
+    ContentLuiComponent,
   ],
   imports: [
     BrowserModule,

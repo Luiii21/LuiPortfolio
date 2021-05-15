@@ -1,21 +1,52 @@
 @import '~assets/scss/colors';
 @import '~assets/scss/mixins';
 
-.navbar {
-  min-height: 60px;
-  background-color: white;
-  transition: all 1s ease-out;
+.portfolio-nav {
+  background-color: transparent;
+  display: flex;
+  width: 100%;
+  min-height: 76px;
+  position: absolute;
+  top: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  z-index: 8;
+  @include min-width-576 {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
 
-.nav-link {
-  font-family: Roboto-Regular, sans-serif;
-  font-size: 12px;
-  color: black;
-  padding-left: 4px;
-  letter-spacing: 2px;
+.archetypes-container {
+  align-items: center;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
 }
 
-.fa-bars {
-  font-size: 40px;
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: fit-content;
+  right: 0;
+  text-align: right;
+
+  h4 {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Quicksand', sans-serif;
+    letter-spacing: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  &.changed {
+    right: auto;
+    text-align: left;
+  }
 }
+
 

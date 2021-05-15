@@ -1,0 +1,23 @@
+@import '~assets/scss/colors';
+@import '~assets/scss/mixins';
+
+
+/*.attribute-container {
+
+  @include min-width-992 {
+    display: none;
+    transition: all 2s;
+
+
+    &.exists {
+      display: flex;
+      transition: 2s ease-in;
+    }
+  }
+}*/
+
+.container-fluid {
+  @include min-width-992 {
+    padding-top: 76px;
+  }
+}

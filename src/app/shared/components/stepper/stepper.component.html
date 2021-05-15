@@ -1,0 +1,37 @@
+<div class="attributes-nav" [ngClass]="{'activated': activated}">
+  <button type="button" class="btn-backwards d-lg-none" (click)="activated = !activated"
+          [ngClass]="{'d-lg-flex mr-auto': activated}">
+    <i class="fa fa-angle-left d-none d-lg-flex"></i>
+    <i class="fa fa-list-ul d-lg-none"></i>
+    <h6 class="text-uppercase d-lg-none">Atributos</h6>
+  </button>
+  <button type="button" class="btn-attributes text-uppercase" *ngFor="let attribute of listAttributes; let i = index"
+          [routerLink]="attribute.url" (click)="activatedAttribute(!activated, attribute.id)"
+          [ngClass]="{'d-lg-none': activated && attributeSelected !== i}">
+    {{attribute.title}}
+  </button>
+</div>
+<!--<div class="attributes-container" [ngClass]="{'haveAttribute': usingAttribute.status === true}">
+  <button type="button" class="btn-attribute-menu d-lg-none"
+          (click)="emitStepper( !usingAttribute.status, usingAttribute.step)"
+          [ngClass]="{'d-lg-flex': usingAttribute.status === true}">
+    <i class="fa fa-list-ul d-lg-none"></i>
+    <h6 class="text-uppercase">Atributos</h6>
+  </button>
+  <button type="button" class="btn-attribute-menu d-none" (click)="emitStepper( !usingAttribute.status, 0)"
+          [ngClass]="{'d-lg-flex': usingAttribute.status === true}">
+    <i class="fa fa-angle-left"></i>
+  </button>
+  <div class="attributes-btn-container d-lg-none">
+    <button type="button" class="btn-attribute"
+            *ngFor="let attribute of listAttributes; let i = index"
+            (click)="emitStepper(!usingAttribute.status, i + 1)">{{attribute.tittle}}</button>
+  </div>
+  <div class="attributes-btn-container d-none d-lg-flex">
+    <button type="button" class="btn-attribute"
+            [ngClass]="{'d-lg-none': usingAttribute.status === true && i + 1 !== usingAttribute.step }"
+            *ngFor="let attribute of listAttributes; let i = index"
+            (click)="emitStepper(true, i + 1)">{{attribute.tittle}}</button>
+  </div>
+</div>
+ -->

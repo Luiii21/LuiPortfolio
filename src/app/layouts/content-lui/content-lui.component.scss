@@ -1,0 +1,38 @@
+@import '~assets/scss/mixins';
+
+.container-fluid {
+  background-color: #f0f0f0;
+  min-height: 100vh;
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.content-display {
+  background-color: white;
+  width: 100%;
+  min-height: 100%;
+  max-width: 1300px;
+  position: relative;
+
+  @include min-width-992 {
+    max-width: 992px;
+  }
+
+  @include min-width-1200 {
+    max-width: 1200px;
+  }
+
+  @include for-min-width(1300px) {
+    max-width: 1300px;
+  }
+
+  @include for-min-width(1600px) {
+    max-width: 1600px;
+  }
+
+  @include for-min-width(1920px) {
+    max-width: 1920px;
+  }
+}
