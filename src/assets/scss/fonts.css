@@ -1,21 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
 .quicksand {
   font-family: 'Quicksand', sans-serif;
 }
 
-.txt-xsm {
-  font-size: 12px;
-}
-
-.txt-sm {
-  font-size: 16px;
-}
-
-.txt-md {
-  font-size: 22px;
-}
-
-.fxt-lg {
-  font-size: 33px;
+.raleway {
+  font-family: 'Raleway', sans-serif;
 }

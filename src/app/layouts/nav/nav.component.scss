@@ -1,52 +1,145 @@
 @import '~assets/scss/colors';
 @import '~assets/scss/mixins';
 
-.portfolio-nav {
-  background-color: transparent;
+.bottom-nav {
+  bottom: 0;
   display: flex;
+  flex-direction: row;
+  height: 46px;
   width: 100%;
   min-height: 76px;
+  min-width: 100%;
   position: absolute;
-  top: 0;
-  padding-left: 10px;
-  padding-right: 10px;
   z-index: 8;
-  @include min-width-576 {
-    padding-left: 30px;
-    padding-right: 30px;
+  @include min-width-992 {
+    display: none;
   }
 }
 
-.archetypes-container {
-  align-items: center;
-  display: flex;
-  position: relative;
-  overflow: hidden;
-  width: 100%;
+.btn-orange {
+  height: 100%;
+  width: 50%;
 }
 
-.buttons-container {
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  height: 46px;
+  width: 100%;
+  min-height: 36px;
+  position: absolute;
+  padding-top: 20px;
+  top: 0;
+
+  .btn-toggle {
+    right: 20px;
+
+    i {
+      font-size: 20px;
+    }
+  }
+}
+
+.nav-menu-container {
+  border-left: 0.1px solid lightgrey;
+  background-color: $ghost-white;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  position: absolute;
-  width: fit-content;
+  justify-content: center;
+  width: 0;
   right: 0;
-  text-align: right;
+  overflow: hidden;
+  position: absolute;
+  transition: all 0.5s;
+  top: 0;
+  z-index: 9;
 
-  h4 {
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    font-family: 'Quicksand', sans-serif;
-    letter-spacing: 2px;
-    padding-left: 5px;
-    padding-right: 5px;
+  .btn-toggle {
+    top: 20px;
+    right: 20px;
+    z-index: 9;
   }
 
-  &.changed {
-    right: auto;
-    text-align: left;
+  &.show {
+    width: 70%;
+    padding: 0 13px;
+  }
+
+  h4 {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  hr {
+    border: 2px solid $flame;
+    width: 100%;
+    margin: 11px 0 20px 0;
   }
 }
 
+.links-dropdown {
+  height: fit-content;
+  list-style-type: none;
+  width: 100%;
+
+  .btn-drop-toggle {
+    align-items: center;
+    background-color: white;
+    border: none;
+    display: flex;
+    font-weight: bold;
+    font-family: 'Raleway', sans-serif;
+    height: 36px;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 11px;
+    text-transform: uppercase;
+
+    span {
+      font-size: 13px;
+    }
+
+    i {
+      font-size: 15px;
+    }
+  }
+
+  .btn-drop-toggle.active, .btn-drop-toggle:hover {
+    background-color: $flame;
+    color: white;
+  }
+
+  .btn-drop-toggle:hover {
+    i {
+      transition: all 0.5s;
+      transform: rotate(90deg);
+    }
+  }
+
+  .links .nav-link {
+    align-items: center;
+    display: flex;
+    height: 0;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    width: 100%;
+    margin-bottom: 0;
+    transition: height 0.5s;
+    overflow: hidden;
+    opacity: 0;
+    padding: 0;
+  }
+
+  .links.show .nav-link {
+    opacity: 1;
+    height: 36px;
+  }
+
+  .links .nav-link.active {
+    color: $flame;
+  }
+}
 

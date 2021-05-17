@@ -5,56 +5,41 @@ button {
   outline: none !important;
 }
 
-.btn-archetype {
-  background-color: transparent;
-  border: none;
-  color: white;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 16px;
-  outline: none;
-  padding-left: 5px;
-  padding-right: 5px;
-
-  &:hover::after, &.active::after, &.active {
-    font-weight: bold;
-    width: 100%;
-  }
-
-  &::after {
-    content: '';
-    width: 0px;
-    height: 2px;
-    display: block;
-    background: white;
-    transition: 300ms;
-  }
-}
-
-
-.btn-backwards {
+.btn-orange {
   align-items: center;
-  background-color: transparent;
+  background-color: $orange-yellow;
   border: none;
+  color: $ghost-white;
   display: flex;
+  flex-direction: column;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
   min-height: 46px;
-  width: auto;
+  height: 46px;
+  transition: all 0.7s;
+  justify-content: center;
+  text-align: center;
+
+  &:hover {
+    background-color: $tenne-tawny;
+  }
 
   i {
-    font-size: 23px;
+    font-size: 21px;
   }
 
-  h6 {
-    margin: 0 10px;
-  }
-
-  @include min-width-992 {
-    justify-content: center;
+  span {
+    font-size: 11px;
+    text-transform: uppercase;
   }
 }
 
-.btn-attributes {
+.btn-toggle {
   background-color: transparent;
   border: none;
-  height: 46px;
-  min-height: 46px;
+  position: absolute;
+
+  i {
+    font-size: 25px;
+  }
 }
