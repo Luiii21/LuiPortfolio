@@ -8,7 +8,6 @@ import * as jQuery from 'jquery';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-
   constructor(private router: Router) {
   }
 
@@ -20,30 +19,10 @@ export class NavComponent implements OnInit {
 
   jquery(): void {
     jQuery(document).ready(() => {
-      jQuery('.toggle-menu').click(() => {
-        jQuery('.nav-menu-container').toggleClass('show');
-      });
-
-      jQuery('#personal').click(() => {
-        if (jQuery('#personal').parents('.links-dropdown').find('.links').hasClass('show')) {
-          jQuery('#personal').parents('.links-dropdown').find('.links').removeClass('show');
-        } else {
-          jQuery('#personal').parents('.links-dropdown').find('.links').addClass('show');
-        }
-      });
-
-      jQuery('#professional').click(() => {
-        if (jQuery('#professional').parents('.links-dropdown').find('.links').hasClass('show')) {
-          jQuery('#professional').parents('.links-dropdown').find('.links').removeClass('show');
-        } else {
-          jQuery('#professional').parents('.links-dropdown').find('.links').addClass('show');
-        }
-      });
-
-      jQuery('.nav-link').click(() => {
-        jQuery('.nav-menu-container').toggleClass('show');
+      jQuery('.menu-toggle').click(() => {
+        jQuery('.nav-menu').toggleClass('show');
+        jQuery('.nav-bottom').toggleClass('hide');
       });
     });
   }
-
 }

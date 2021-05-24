@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500">
+  <defs>
+    <path d="M243.2, 382.4c-74.8,
+    0-135.5-60.7-135.5-135.5s60.7-135.5,135.5-135.5s135.5, 60.7, 135.5,
+    135.5 S318, 382.4, 243.2, 382.4z" id="textCircle" />
+    <style>
+      text {
+        font-size: 70px;
+        font-family: Raleway, sans-serif;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+      }
+    </style>
+  </defs>
+  <text width="195">
+    <textPath xlink:href="#textCircle">
+      Texto de prueba para probar
+    </textPath>
+  </text>
+</svg>

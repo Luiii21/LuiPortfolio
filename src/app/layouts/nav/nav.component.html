@@ -1,50 +1,59 @@
-<nav class="top-nav">
-  <button type="button" class="btn-toggle toggle-menu">
+<nav class="nav-top">
+  <button type="button" class="btn-menu-nav menu-toggle">
     <i class="fa fa-bars"></i>
   </button>
 </nav>
-
-<nav class="bottom-nav">
-  <button type="button" class="btn-orange" [routerLink]="['profesional/proyectos']">
+<div class="nav-menu">
+  <button class="btn-close-nav menu-toggle">
+    <i class="fa fa-close"></i>
+  </button>
+  <div class="row no-gutters nav-menu-content">
+    <div class="profile-photo">
+      <img src="./assets/img/photos/profile-img.jpg" alt="profile-photo">
+    </div>
+    <div class="profile-names">
+      <h5>Jean Lui Ferrer</h5>
+      <h6>Front End Developer</h6>
+    </div>
+    <span class="nav-link-tittle">
+        Perfil profesional
+      </span>
+    <div class="nav-links">
+      <button type="button" class="nav-link"
+              [routerLink]="['/jeanlui/profesional/experiencias']"
+              [routerLinkActive]="'active'">
+        Experiencia Laboral
+      </button>
+      <button type="button" class="nav-link"
+              [routerLink]="['/jeanlui/profesional/informacion']"
+              [routerLinkActive]="'active'">
+        Información
+      </button>
+      <button type="button" class="nav-link"
+              [routerLink]="['/jeanlui/profesional/proyectos']"
+              [routerLinkActive]="'active'">
+        Proyectos
+      </button>
+    </div>
+    <span class="nav-link-tittle">
+        Perfil personal
+      </span>
+    <div class="nav-links">
+      <button type="button" class="nav-link"
+              [routerLink]="['/jeanlui/personal/hobbies']"
+              [routerLinkActive]="'active'">
+        Hobbies
+      </button>
+    </div>
+  </div>
+</div>
+<nav class="nav-bottom">
+  <button type="button" class="btn-bottom-nav">
     <i class="fa fa-briefcase"></i>
     <span>Proyectos</span>
   </button>
-  <button type="button" class="btn-orange toggle-menu">
-    <i class="fa fa-list-ul"></i>
+  <button type="button" class="btn-bottom-nav menu-toggle">
+    <i class="fa fa-bars"></i>
     <span>Menú</span>
   </button>
 </nav>
-
-<div class="nav-menu-container">
-  <button type="button" class="btn-toggle toggle-menu">
-    <i class="fa fa-close"></i>
-  </button>
-  <h4>Perfiles:</h4>
-  <hr>
-  <li class="links-dropdown">
-    <button class="btn-drop-toggle" [ngClass]="{'active': routing.url.includes('personal')}" id="personal">
-      <span>Personal</span>
-      <i class="fa fa-caret-square-o-right"></i>
-    </button>
-    <ul class="links">
-      <li class="nav-link" [routerLink]="['personal/hobbies']" routerLinkActive="active"><span>Hobbies</span></li>
-    </ul>
-  </li>
-  <li class="links-dropdown">
-    <button class="btn-drop-toggle" [ngClass]="{'active': routing.url.includes('profesional')}" id="professional">
-      <span>Profesional</span>
-      <i class="fa fa-caret-square-o-right"></i>
-    </button>
-    <ul class="links">
-      <li class="nav-link" [routerLink]="['profesional/informacion']" routerLinkActive="active">
-        <span>Información</span></li>
-      <li class="nav-link" [routerLink]="['profesional/tecnologias']" routerLinkActive="active">
-        <span>Técnologias</span></li>
-      <li class="nav-link" [routerLink]="['profesional/proyectos']" routerLinkActive="active"><span>Proyectos</span>
-      </li>
-      <li class="nav-link" [routerLink]="['profesional/experiencias']" routerLinkActive="active">
-        <span>Experiencias</span>
-      </li>
-    </ul>
-  </li>
-</div>

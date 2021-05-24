@@ -3,29 +3,23 @@
 
 button {
   outline: none !important;
+  box-shadow: none !important;
 }
 
-.btn-orange {
+.btn-bottom-nav {
   align-items: center;
-  background-color: $orange-yellow;
+  background-color: transparent;
   border: none;
-  color: $ghost-white;
+  color: white;
   display: flex;
   flex-direction: column;
   font-family: 'Raleway', sans-serif;
-  font-weight: bold;
-  min-height: 46px;
-  height: 46px;
-  transition: all 0.7s;
   justify-content: center;
-  text-align: center;
-
-  &:hover {
-    background-color: $tenne-tawny;
-  }
+  width: 50%;
 
   i {
-    font-size: 21px;
+    font-size: 20px;
+    margin-bottom: 3px;
   }
 
   span {
@@ -34,12 +28,35 @@ button {
   }
 }
 
-.btn-toggle {
+.btn-menu-nav {
   background-color: transparent;
   border: none;
+
+  i {
+    font-size: 18px;
+    margin: 0;
+  }
+}
+
+.btn-close-nav {
+  background-color: transparent;
+  border: none;
+  color: white;
+  right: 10px;
+  top: 6px;
   position: absolute;
 
   i {
-    font-size: 25px;
+    font-size: 18px;
+    margin: 0;
+  }
+}
+
+
+@include min-width-992 {
+  .btn-menu-nav {
+    i {
+      font-size: 23px;
+    }
   }
 }

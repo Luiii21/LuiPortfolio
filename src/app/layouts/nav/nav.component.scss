@@ -1,145 +1,186 @@
 @import '~assets/scss/colors';
 @import '~assets/scss/mixins';
 
-.bottom-nav {
+.nav-links {
+  background-color: white;
+  margin: 8px 0;
+}
+
+.profile-photo {
+  align-items: center;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  height: 195px;
+  justify-content: center;
+  width: 195px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+
+  img {
+    border-radius: 50%;
+    height: 180px;
+    width: 180px;
+  }
+}
+
+.profile-names {
+  align-items: center;
+  border-bottom: 5px dashed white;
+  display: flex;
+  flex-direction: column;
+  padding: 13px 0;
+  margin-bottom: 15px;
+
+  h5 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0;
+  }
+
+  h6 {
+    font-size: 13px;
+    margin-top: 3px;
+  }
+}
+
+.nav-bottom {
+  background-color: $orange-yellow;
   bottom: 0;
   display: flex;
   flex-direction: row;
-  height: 46px;
-  width: 100%;
-  min-height: 76px;
-  min-width: 100%;
+  height: 66px;
   position: absolute;
+  width: 100%;
   z-index: 8;
-  @include min-width-992 {
+  transition: height 0.2s ease-out;
+}
+
+.nav-bottom.hide {
+  height: 0;
+
+  button {
     display: none;
   }
 }
 
-.btn-orange {
-  height: 100%;
-  width: 50%;
-}
-
-.top-nav {
+.nav-link-tittle {
+  align-items: center;
+  background-color: $spanish-orange;
+  border-radius: 0;
+  color: white;
   display: flex;
+  font-size: 12.5px;
+  font-weight: bold;
+  text-transform: uppercase;
   justify-content: space-between;
-  height: 46px;
-  width: 100%;
-  min-height: 36px;
-  position: absolute;
-  padding-top: 20px;
-  top: 0;
+  padding: 8px 12px;
 
-  .btn-toggle {
-    right: 20px;
-
-    i {
-      font-size: 20px;
-    }
+  i {
+    font-weight: bold;
+    font-size: 17px;
   }
 }
 
-.nav-menu-container {
-  border-left: 0.1px solid lightgrey;
-  background-color: $ghost-white;
-  height: 100%;
+.nav-top {
+  align-items: center;
+  background-color: transparent;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 0;
-  right: 0;
-  overflow: hidden;
+  flex-direction: row;
+  height: 46px;
+  justify-content: flex-end;
   position: absolute;
-  transition: all 0.5s;
+  padding: 0 10px;
+  width: 100%;
   top: 0;
+  overflow-x: hidden;
+  z-index: 8;
+}
+
+.nav-link {
+  background-color: $orange-yellow;
+  border: none;
+  color: white;
+  font-size: 13px;
+  text-align: left;
+  text-transform: uppercase;
+  padding: 5px 36px;
+  width: 100%;
+}
+
+.nav-link.active {
+  clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 5% 50%, 0% 0%);
+  font-weight: bold;
+}
+
+.nav-menu {
+  background-color: $orange-yellow;
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  transition: all 0.5s ease-out;
+  top: 0;
+  width: 0;
+  min-width: 0;
+  min-height: 100vh;
+  overflow: hidden;
   z-index: 9;
 
-  .btn-toggle {
-    top: 20px;
-    right: 20px;
-    z-index: 9;
-  }
-
-  &.show {
-    width: 70%;
-    padding: 0 13px;
-  }
-
-  h4 {
-    font-family: 'Raleway', sans-serif;
-    margin: 0;
-    text-transform: uppercase;
-    text-align: center;
-  }
-
-  hr {
-    border: 2px solid $flame;
-    width: 100%;
-    margin: 11px 0 20px 0;
+  .nav-menu-content {
+    display: none;
   }
 }
 
-.links-dropdown {
-  height: fit-content;
-  list-style-type: none;
-  width: 100%;
+.nav-menu.show {
+  width: 70%;
 
-  .btn-drop-toggle {
-    align-items: center;
+  .nav-menu-content {
+    display: flex;
+  }
+}
+
+.nav-menu-content {
+  color: white;
+  margin-top: 35px;
+  flex-direction: column;
+}
+
+@include min-width-992 {
+
+  .profile-photo {
+    display: none;
+  }
+
+  .nav-bottom {
+    display: none;
+  }
+
+  .nav-top {
     background-color: white;
-    border: none;
-    display: flex;
-    font-weight: bold;
-    font-family: 'Raleway', sans-serif;
-    height: 36px;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0 11px;
-    text-transform: uppercase;
-
-    span {
-      font-size: 13px;
-    }
-
-    i {
-      font-size: 15px;
-    }
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    height: 76px;
+    padding: 0 35px;
   }
 
-  .btn-drop-toggle.active, .btn-drop-toggle:hover {
-    background-color: $flame;
-    color: white;
-  }
-
-  .btn-drop-toggle:hover {
-    i {
-      transition: all 0.5s;
-      transform: rotate(90deg);
-    }
-  }
-
-  .links .nav-link {
-    align-items: center;
-    display: flex;
+  .nav-menu {
     height: 0;
-    font-family: 'Raleway', sans-serif;
-    font-weight: bold;
     width: 100%;
-    margin-bottom: 0;
-    transition: height 0.5s;
-    overflow: hidden;
-    opacity: 0;
-    padding: 0;
+    min-height: 0;
+    max-height: 30%;
+    position: sticky;
+    z-index: 7;
   }
 
-  .links.show .nav-link {
-    opacity: 1;
-    height: 36px;
+  .nav-menu.show {
+    width: 100%;
+    height: 30%;
+    min-height: 30%;
   }
 
-  .links .nav-link.active {
-    color: $flame;
+  .nav-menu-content {
+    flex-direction: row;
   }
 }
-
