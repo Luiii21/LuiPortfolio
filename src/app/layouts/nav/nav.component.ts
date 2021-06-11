@@ -19,10 +19,15 @@ export class NavComponent implements OnInit {
 
   jquery(): void {
     jQuery(document).ready(() => {
-      jQuery('.menu-toggle').click(() => {
-        jQuery('.nav-menu').toggleClass('show');
-        jQuery('.nav-bottom').toggleClass('hide');
+
+      jQuery('.btn-nav-item.menu').click(() => {
+        jQuery('.lui-nav').toggleClass('show', 600);
       });
+
+      jQuery('.profile-links li').click(() => {
+        jQuery('.lui-nav').toggleClass('show', 600);
+      });
+
     });
   }
 }

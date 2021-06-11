@@ -1,186 +1,242 @@
 @import '~assets/scss/colors';
 @import '~assets/scss/mixins';
 
-.nav-links {
-  background-color: white;
-  margin: 8px 0;
-}
 
-.profile-photo {
+.btn-nav-item {
+
+  height: 100%;
+  width: 100%;
+
   align-items: center;
-  background-color: white;
-  border-radius: 50%;
+  border-radius: 0;
+  color: $secondary;
   display: flex;
-  height: 195px;
   justify-content: center;
-  width: 195px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
+  font-size: 24px;
+  font-family: 'Raleway', sans-serif;
 
-  img {
-    border-radius: 50%;
-    height: 180px;
-    width: 180px;
+  &:hover, &:active, &.active {
+    background-color: $secondary-dark;
+    color: $primary-dark;
   }
-}
 
-.profile-names {
-  align-items: center;
-  border-bottom: 5px dashed white;
-  display: flex;
-  flex-direction: column;
-  padding: 13px 0;
-  margin-bottom: 15px;
-
-  h5 {
-    font-family: 'Raleway', sans-serif;
+  span {
+    display: none;
+    font-size: 15px;
     font-weight: bold;
-    font-size: 20px;
-    margin: 0;
-  }
-
-  h6 {
-    font-size: 13px;
-    margin-top: 3px;
+    letter-spacing: 0.9px;
   }
 }
 
-.nav-bottom {
-  background-color: $orange-yellow;
+.lui-nav {
+
+  height: 0;
+  width: 100%;
+
+  animation: mobile-animations;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  background-color: $primary;
   bottom: 0;
   display: flex;
-  flex-direction: row;
-  height: 66px;
   position: absolute;
-  width: 100%;
-  z-index: 8;
-  transition: height 0.2s ease-out;
+  z-index: 9;
 }
 
-.nav-bottom.hide {
+.lui-nav.show {
+  animation: height-mobile-transition;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.lui-nav.show .btn-nav-item {
+
+  height: 58px;
+
+  justify-content: flex-start;
+  padding: 0 0 0 28px;
+
+  i, .profile-img {
+    margin: 0 18px 0 0;
+  }
+
+  span {
+    display: block;
+    text-transform: uppercase;
+  }
+}
+
+.lui-nav.show .btn.menu {
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+}
+
+.lui-nav.show .profile-links {
+  height: 114px;
+
+  display: flex;
+}
+
+.lui-nav.show .sub-title {
+  display: flex;
+}
+
+.profile-links {
   height: 0;
 
-  button {
-    display: none;
-  }
-}
-
-.nav-link-tittle {
-  align-items: center;
-  background-color: $spanish-orange;
-  border-radius: 0;
-  color: white;
-  display: flex;
-  font-size: 12.5px;
-  font-weight: bold;
-  text-transform: uppercase;
-  justify-content: space-between;
-  padding: 8px 12px;
-
-  i {
-    font-weight: bold;
-    font-size: 17px;
-  }
-}
-
-.nav-top {
-  align-items: center;
-  background-color: transparent;
-  display: flex;
-  flex-direction: row;
-  height: 46px;
-  justify-content: flex-end;
-  position: absolute;
-  padding: 0 10px;
-  width: 100%;
-  top: 0;
-  overflow-x: hidden;
-  z-index: 8;
-}
-
-.nav-link {
-  background-color: $orange-yellow;
-  border: none;
-  color: white;
-  font-size: 13px;
-  text-align: left;
-  text-transform: uppercase;
-  padding: 5px 36px;
-  width: 100%;
-}
-
-.nav-link.active {
-  clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 5% 50%, 0% 0%);
-  font-weight: bold;
-}
-
-.nav-menu {
-  background-color: $orange-yellow;
-  height: 100vh;
-  position: absolute;
-  right: 0;
-  transition: all 0.5s ease-out;
-  top: 0;
-  width: 0;
-  min-width: 0;
-  min-height: 100vh;
-  overflow: hidden;
-  z-index: 9;
-
-  .nav-menu-content {
-    display: none;
-  }
-}
-
-.nav-menu.show {
-  width: 70%;
-
-  .nav-menu-content {
-    display: flex;
-  }
-}
-
-.nav-menu-content {
-  color: white;
-  margin-top: 35px;
+  display: none;
   flex-direction: column;
+  margin: 0 0 15px 0;
+  list-style-type: none;
+  padding: 0;
+  transition: height 0.3s ease-out;
+}
+
+.profile-links li {
+  height: 38px;
+
+  align-items: center;
+  color: $secondary;
+  display: flex;
+  position: relative;
+  padding: 0 0 0 40px;
+  z-index: 8;
+
+
+  &:hover, &.active {
+    background-color: $primary-dark;
+    color: white;
+  }
+}
+
+.profile-links li span {
+  font-family: 'Raleway', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.6px;
+  margin-left: 22px;
+
+  &:before {
+    height: 100%;
+
+    content: '';
+    border-left: 3px solid;
+    bottom: 0;
+    position: absolute;
+    left: 39px;
+    z-index: -1;
+  }
+
+  &:after {
+    height: 100%;
+
+    content: '●';
+    border-left: none;
+    bottom: 0;
+    font-size: 23px;
+    position: absolute;
+    left: 34px;
+    z-index: -1;
+  }
+}
+
+.sub-title {
+  height: 38px;
+
+  align-items: center;
+  background-color: $primary-dark;
+  color: white;
+  font-size: 15px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  display: none;
+  padding: 0 0 0 28px;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
 }
 
 @include min-width-992 {
 
-  .profile-photo {
-    display: none;
+  .btn-nav-item {
+    height: 58px;
+
+    justify-content: normal;
+    padding: 0 0 0 28px
   }
 
-  .nav-bottom {
-    display: none;
+  .btn.home {
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+
+    span {
+      font-size: 12px;
+    }
   }
 
-  .nav-top {
-    background-color: white;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    height: 76px;
-    padding: 0 35px;
+  .lui-nav {
+    height: 100vh;
+    width: 76px;
+
+    animation: none;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.2s ease-out;
   }
 
-  .nav-menu {
+  .lui-nav.show {
+    width: 328px;
+    height: 100vh;
+
+    animation: none;
+    border-radius: 0;
+    justify-content: center;
+  }
+
+  .lui-nav.show .btn.menu {
+    border-radius: 0;
+  }
+
+  .profile-links li.active {
+    background-color: $primary-dark;
+    z-index: 9;
+    width: 100%;
+
+    &:after,
+    &:after {
+      z-index: -1;
+      position: absolute;
+      right: -19px;
+      content: '';
+      width: 0;
+      border-top: 50px solid transparent;
+      border-left: 100px solid $primary-dark;
+      border-bottom: 50px solid transparent;
+      border-width: 19px;
+    }
+  }
+}
+
+@keyframes mobile-animations {
+  0% {
     height: 0;
-    width: 100%;
-    min-height: 0;
-    max-height: 30%;
-    position: sticky;
-    z-index: 7;
   }
 
-  .nav-menu.show {
-    width: 100%;
-    height: 30%;
-    min-height: 30%;
+  100% {
+    height: 76px;
+  }
+}
+
+@keyframes height-mobile-transition {
+  3% {
+    height: 0;
   }
 
-  .nav-menu-content {
-    flex-direction: row;
+  100% {
+    height: 80vh;
   }
 }

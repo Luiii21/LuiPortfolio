@@ -1,7 +1,8 @@
 @import '~assets/scss/mixins';
+@import '~assets/scss/colors';
 
 .container-fluid {
-  background-color: #f0f0f0;
+  background-color: $secondary-dark;
   min-height: 100vh;
   min-width: 100%;
   display: flex;

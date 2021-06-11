@@ -1,59 +1,34 @@
-<nav class="nav-top">
-  <button type="button" class="btn-menu-nav menu-toggle">
+<nav class="lui-nav shadow">
+  <button class="btn menu btn-nav-item" [class.active]="routing.url.includes('profesional') || routing.url.includes('personal')">
     <i class="fa fa-bars"></i>
+    <span>Perfíl/Carácteristicas</span>
   </button>
-</nav>
-<div class="nav-menu">
-  <button class="btn-close-nav menu-toggle">
-    <i class="fa fa-close"></i>
-  </button>
-  <div class="row no-gutters nav-menu-content">
-    <div class="profile-photo">
-      <img src="./assets/img/photos/profile-img.jpg" alt="profile-photo">
-    </div>
-    <div class="profile-names">
-      <h5>Jean Lui Ferrer</h5>
-      <h6>Front End Developer</h6>
-    </div>
-    <span class="nav-link-tittle">
-        Perfil profesional
-      </span>
-    <div class="nav-links">
-      <button type="button" class="nav-link"
-              [routerLink]="['/jeanlui/profesional/experiencias']"
-              [routerLinkActive]="'active'">
-        Experiencia Laboral
-      </button>
-      <button type="button" class="nav-link"
-              [routerLink]="['/jeanlui/profesional/informacion']"
-              [routerLinkActive]="'active'">
-        Información
-      </button>
-      <button type="button" class="nav-link"
-              [routerLink]="['/jeanlui/profesional/proyectos']"
-              [routerLinkActive]="'active'">
-        Proyectos
-      </button>
-    </div>
-    <span class="nav-link-tittle">
-        Perfil personal
-      </span>
-    <div class="nav-links">
-      <button type="button" class="nav-link"
-              [routerLink]="['/jeanlui/personal/hobbies']"
-              [routerLinkActive]="'active'">
-        Hobbies
-      </button>
-    </div>
+  <div class="sub-title">
+    <span>Profesional</span>
   </div>
-</div>
-<nav class="nav-bottom">
-  <button type="button" class="btn-bottom-nav">
+  <ul class="profile-links">
+    <li [routerLink]="['/jeanlui/profesional/experiencias']" [routerLinkActive]="'active'"><span>Experiencias</span></li>
+    <li [routerLink]="['/jeanlui/profesional/informacion']" [routerLinkActive]="'active'"><span>Resumen Profesional</span></li>
+    <li [routerLink]="['/jeanlui/profesional/tecnologias']" [routerLinkActive]="'active'"><span>Tecnologias</span></li>
+  </ul>
+  <div class="sub-title">
+    <span>Personal</span>
+  </div>
+  <ul class="profile-links">
+    <li><span>Resumen Personal</span></li>
+    <li [routerLink]="['/jeanlui/personal/hobbies']" [routerLinkActive]="'active'"><span>Proyectos personales</span></li>
+  </ul>
+  <button class="btn btn-nav-item" [routerLink]="['/jeanlui/proyectos']" [routerLinkActive]="'active'">
     <i class="fa fa-briefcase"></i>
     <span>Proyectos</span>
   </button>
-  <button type="button" class="btn-bottom-nav menu-toggle">
-    <i class="fa fa-bars"></i>
-    <span>Menú</span>
+  <button class="btn btn-nav-item">
+    <i class="fa fa-phone"></i>
+    <span>Contacto</span>
   </button>
+
+  <!-- <button class="btn home btn-nav-item ">
+    <i class="fa fa-arrow-circle-left"></i>
+    <span>Ir a inicio</span>
+  </button> -->
 </nav>

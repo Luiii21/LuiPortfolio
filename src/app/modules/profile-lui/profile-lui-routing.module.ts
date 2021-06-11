@@ -25,10 +25,6 @@ const routes: Routes = [
             component: ProfessionalTechComponent
           },
           {
-            path: 'proyectos',
-            component: ProfessionalProyectsComponent
-          },
-          {
             path: 'experiencias',
             component: ProfessionalExperienciesComponent
           },
@@ -53,14 +49,20 @@ const routes: Routes = [
         ]
       },
       {
-        path: '**',
-        redirectTo: 'profesional'
+        path: 'proyectos',
+        component: LuiProfileComponent,
+        children: [
+          {
+            path: '',
+            component: ProfessionalProyectsComponent
+          }
+        ]
       }
     ],
   },
   {
     path: '**',
-    redirectTo: 'profesional'
+    redirectTo: ''
   }
 ];
 
